@@ -20,7 +20,7 @@ const zoom = event => {
 
     scale = Math.min(Math.max(.125, scale), 4);
 
-    el.style.transform = 'scale(${scale})';
+    el.style.transform = `scale(${scale})`;
 }
 
 let scale = 1;
@@ -66,4 +66,40 @@ newFooterColor.addEventListener('click', event =>{
     newFooterColor.style.backgroundColor = '#17A2B8';
 })
 
-7. //EVENT LISTENER - 
+// 7. EVENT LISTENER - FOCUS
+const password = document.querySelector('input[type="password"]');
+
+password.addEventListener('focus', (event) =>{
+    event.target.style.backgroundColor = '#17A2B8';
+});
+
+// 8. EVENT LISTENER - BLUR
+password.addEventListener('blur', (event) => {
+    event.target.style.background = '';    
+});
+
+// 9. EVENT LISTENER - KEYDOWN
+const keyDownTest = document.querySelector('#form input');
+keyDownTest.addEventListener('keydown', logKey);
+
+// const logKey = (e) => {
+//     log.textContent += `${e.code}`;
+// }
+
+function logKey(e) {
+    log.textContent += `${e.code}`;
+}
+
+// 10. EVENT LISTENER - KEYPRESS
+document.addEventListener('keypress', logKey);
+
+function logKey(e) {
+  log.textContent += ` ${e.code}`;
+}
+
+// 11. EVENT LISTENER - KEYUP
+document.addEventListener('keyup', logKey);
+
+function logKey(e) {
+  log.textContent += ` ${e.code}`;
+}
